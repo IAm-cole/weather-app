@@ -121,7 +121,7 @@ export function ForecastPage({ forecast }: ForecastPageProps) {
             <div className="grid grid-cols-3 gap-4">
               {forecastSections.daystats.map((stat, index) => (
                 <div
-                  key={stat.index}
+                  key={index}
                   className="flex items-center gap-3 p-4 bg-blue-50 rounded-xl"
                 >
                   {stat.icon}
@@ -168,7 +168,7 @@ export function ForecastPage({ forecast }: ForecastPageProps) {
           {forecastSections.astronomy.map((astrostat, index) => (
             
             <div
-              key={astrostat.index}
+              key={index}
               className="p-6 bg-gradient-to-br from-orange-50 to-purple-50 rounded-xl"
             >
              

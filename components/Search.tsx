@@ -96,7 +96,7 @@ export function SearchBar({ onSearch, isLoading }: SearchBarProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto mb-8" ref={suggestionsRef}>
+    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto mb-8" >
       <div className="relative">
         <div className="flex items-center gap-2">
           <div className="flex-1 relative">
