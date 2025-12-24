@@ -156,7 +156,7 @@ const BASE_URL = `http://api.weatherapi.com/v1/current.json`;
 
 export async function fetchWeatherByCity(city: string): Promise<WeatherData> {
   const response = await fetch(
-    `${BASE_URL}key=${API_KEY}&query=${encodeURIComponent(city)}`
+    `${BASE_URL}?key=${API_KEY}&query=${encodeURIComponent(city)}`
   );
 
   if (!response.ok) {
@@ -251,7 +251,7 @@ const FORECASTBASE_URL = `https://api.weatherapi.com/v1/forecast.json`;
 
 export async function fetchWeatherForecast(value: string): Promise<ForecastData> {
   const response = await fetch(
-    `${FORECASTBASE_URL}key=${API_KEY}&query=${encodeURIComponent(value)}&days=1&aqi=no&alerts=no`
+    `${FORECASTBASE_URL}?key=${API_KEY}&query=${encodeURIComponent(value)}&days=1&aqi=no&alerts=no`
   );
 
   if (!response.ok) {
