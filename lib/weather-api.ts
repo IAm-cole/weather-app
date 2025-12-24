@@ -148,14 +148,15 @@ export interface WeatherContextType {
 
 // }
 
+const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
 
-const BASE_URL = `http://api.weatherapi.com/v1/current.json?key=8bade6f713ab4c32a29234616253011`;
+const BASE_URL = `http://api.weatherapi.com/v1/current.json`;
 
 
 
 export async function fetchWeatherByCity(city: string): Promise<WeatherData> {
   const response = await fetch(
-    `${BASE_URL}&query=${encodeURIComponent(city)}`
+    `${BASE_URL}key=${API_KEY}&query=${encodeURIComponent(city)}`
   );
 
   if (!response.ok) {
@@ -243,12 +244,14 @@ export async function fetchWeatherByCoordinates(
   };
 }
 
-const FORECASTBASE_URL = `http://api.weatherapi.com/v1/forecast.json?key=8bade6f713ab4c32a29234616253011`
+
+
+const FORECASTBASE_URL = `https://api.weatherapi.com/v1/forecast.json`;
 
 
 export async function fetchWeatherForecast(value: string): Promise<ForecastData> {
   const response = await fetch(
-    `${FORECASTBASE_URL}&query=${encodeURIComponent(value)}&days=1&aqi=no&alerts=no`
+    `${FORECASTBASE_URL}key=${API_KEY}&query=${encodeURIComponent(value)}&days=1&aqi=no&alerts=no`
   );
 
   if (!response.ok) {
